@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>资源学院我最想和学弟学妹说的话</title>
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Areas/zuiMeiJiaoShi/Content/index.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.9.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function check() {
+            if (isNull($("#share").val())) {
+                alert("请填写建议最想和学弟学妹说的话");
+                return false;
+            }
+        }
+        /* 
+        用途：检查输入字符串是否为空或者全部都是空格 
+        输入：str 
+        返回： 
+        如果全是空返回true,否则返回false 
+        */
+        function isNull(str) {
+            if (str == "") return true;
+            var regu = "^[ ]+$";
+            var re = new RegExp(regu);
+            return re.test(str);
+        }
+    </script>
+</head>
+<body>
+    <div id="maindiv">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">资源学院我最想和学弟学妹说的话</h3>
+            </div>
+            <div class="panel-body">
+                <form method="post" onsubmit="return check();">
+                    <div class="form-group">
+                        <label>我最想和学弟学妹说的话：</label>
+                        <textarea class="form-control" placeholder="通过反思大学四年学习中的收获和不足，分享毕业生的成功经验和奋斗精神，给在校学生供借鉴和指导。" rows="16" name="share" id="share"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-lg btn-block">提交</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
